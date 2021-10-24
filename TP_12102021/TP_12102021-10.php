@@ -13,10 +13,10 @@ while ($z>=$x && $z<=$y) {
 }
 
 while ($z<$x) {
-    echo "$z n'est dans pas dans l'intervalle [$x,$y]\n"
+    echo "$z n'est dans pas dans l'intervalle [$x,$y]\n";
 }
 
 while ($z>$y) {
-    echo "$z n'est dans pas dans l'intervalle [$x,$y]\n"
+    echo "$z n'est dans pas dans l'intervalle [$x,$y]\n";
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 // demande d'une saisie à l'utilisateur et attribution dans la variable $c
-echo "saisir un mot ..."
+echo "saisir un mot ...";
 $c = trim(fgets(STDIN));
 
 // on choisit un nombre au hasard, compris entre 1 et 1000
