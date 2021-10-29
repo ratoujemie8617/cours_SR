@@ -8,5 +8,5 @@ echo "saisir un mot ...";
 $c1 = trim(fgets(STDIN));
 
 // mélanger les deux variables $c0 et $c1 et afficher le résultat
-
+echo "$c0.$c1";
 ?>
