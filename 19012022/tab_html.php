@@ -19,6 +19,8 @@ declare(strict_types=1);
     - A la fin on retourne $ret
 */
 // variables de connexion à la base SQL
+
+/*
 $servername = "wamp";
 $username = "root";
 $password = "";
@@ -27,39 +29,51 @@ $dbname = "mapremierebdd";
 // fonction de connexion à la bdd
 $conn = mysqli_connect($servername,$username,$password,$dbname);
 
+// si la connexion n'arrive pas à aboutir, afficher l'erreur
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 echo "Connected Successfully.";
+*/
 
+// fonction de génération automatique de code en HTML
 function tab_html (array $tab_noms_col, int $num_ligne) : string
 {
-$ret = "<table style='width:100%'>\n";
-$header = "\t<tr>\n";
-for($i = 0; $i < count($tab_noms_col); $i++)
-{
-    $header = $header . "\t\t<th>" . $tab_noms_col[$i] . "</th>\n";
-}
-$header = $header . "\t</tr>\n";
+    $ret = "<table style='width:100%'>\n";
 
-$ret = $ret . $header;
+    // en tête du tableau
+    $header = "\t<tr>\n";
 
-$compteur = 0;
-
-while ($compteur < $tab_noms_col) {
-    for ($i=0; $i < count($tab_noms_col); $i++) { 
-        $header . "\t\t<th>" . "</th>\n";
+    for($i = 0; $i < count($tab_noms_col); $i++)
+    {
+        $header = $header . "\t\t<th>" . $tab_noms_col[$i] . "</th>\n";
     }
-    $header . $header . "\t</tr>\n";
+    $header = $header . "\t</tr>\n";
+
+
+    //corps du tableau
+    $compteur = 0;
+    $body = "";
+    while ($compteur < $num_ligne) {
+         for ($i=0; $i < count($tab_noms_col); $i++) { 
+            $body = $body . "\t\t<td>" . "</td>\n";
+        }
+        $body = $body . "\t</tr>\n";
+        $compteur++;
+    }
+
+    $ret = $ret . $header . $body;
+    return $ret . "</table>";
 }
 
-return $ret . "</table>";
-}
+// test
+echo tab_html(["Toto", "Titi"], 3);
 
-echo tab_html(["Toto", "Titi"], 0);
-
+/*
 $rows = [];
 while($row = mysqli_fetch_array($result))
 {
     $rows[] = $row;
 }
+*/
+?>
