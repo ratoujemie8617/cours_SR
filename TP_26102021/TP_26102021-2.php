@@ -12,6 +12,7 @@ $compteur = 0;
 
 // affichage d'un carré avec $c comme motif et $n de côté
 while ($compteur <= $n) {
-    echo "$c \n";
+    echo "$c\n";
+    $compteur = $compteur + 1;
 }
 ?>

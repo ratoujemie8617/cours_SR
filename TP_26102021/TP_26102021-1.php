@@ -8,11 +8,6 @@ $c = trim(fgets(STDIN));
 echo "saisir un nombre ...";
 $n = trim(fgets(STDIN));
 
-// initialisation du compteur
-$compteur = 0;
-
-// tant que $compteur est inférieur ou égale à $n, afficher $c
-while ($compteur <= $n) {
-    echo "$c";
-}
+// Affichage du résultat de $c*$n
+echo $c*$n;
 ?>

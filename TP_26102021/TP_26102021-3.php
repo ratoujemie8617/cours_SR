@@ -16,5 +16,6 @@ $compteur = 0;
 
 while ($compteur <= $long*$large) {
     echo "$c \n";
+    $compteur = compteur + 1;
 }
 ?>
